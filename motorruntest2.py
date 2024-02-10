@@ -18,7 +18,7 @@ print('Starting motor sequence!')
 print("test forward")
 GPIO.output(32, True)
 GPIO.output(33, False)
-time.sleep(3)
+time.sleep(30)
     # Spins the other way for a further 3 seconds
 print("test backward")
 GPIO.output(32, False)
