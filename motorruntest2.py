@@ -20,7 +20,7 @@ GPIO.output(12, True)
 GPIO.output(13, False)
 time.sleep(3)
     # Spins the other way for a further 3 seconds
-    print("test backward")
+print("test backward")
 GPIO.output(12, False)
 GPIO.output(13, True)
 time.sleep(3)
