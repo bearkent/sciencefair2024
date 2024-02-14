@@ -8,12 +8,12 @@ import RPi.GPIO as GPIO
 
 def setuppins():
     # Next we setup the pins for use!
-    GPIO.setmode(GPIO.BOARD)
+    GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
-    GPIO.setup(32,GPIO.OUT)
-    GPIO.setup(33,GPIO.OUT)
-    GPIO.setup(28,GPIO.OUT)
-    GPIO.setup(29,GPIO.OUT)
+    GPIO.setup(12,GPIO.OUT)
+    GPIO.setup(13,GPIO.OUT)
+    GPIO.setup(1,GPIO.OUT)
+    GPIO.setup(5,GPIO.OUT)
 
 
 def motor1test():
