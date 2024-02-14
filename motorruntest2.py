@@ -5,27 +5,52 @@
 import time
 import RPi.GPIO as GPIO
 
-# Next we setup the pins for use!
-GPIO.setmode(GPIO.BOARD)
-GPIO.setwarnings(False)
-GPIO.setup(32,GPIO.OUT)
-GPIO.setup(33,GPIO.OUT)
 
-print('Starting motor sequence!')
+def setuppins():
+    # Next we setup the pins for use!
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setwarnings(False)
+    GPIO.setup(32,GPIO.OUT)
+    GPIO.setup(33,GPIO.OUT)
+    GPIO.setup(28,GPIO.OUT)
+    GPIO.setup(29,GPIO.OUT)
 
+
+def motor1test():
 
     # Makes the motor spin one way for 3 seconds
-print("test forward")
-GPIO.output(32, True)
-GPIO.output(33, False)
-time.sleep(30)
+    print("test forward")
+    GPIO.output(32, True)
+    GPIO.output(33, False)
+    time.sleep(3)
     # Spins the other way for a further 3 seconds
-print("test backward")
-GPIO.output(32, False)
-GPIO.output(33, True)
-time.sleep(3)
-    # If a keyboard interrupt is detected then it exits cleanly!
-print('Finishing up!')
-GPIO.output(32, False)
-GPIO.output(33, False)
-quit()
+    print("test backward")
+    GPIO.output(32, False)
+    GPIO.output(33, True)
+    time.sleep(3)
+
+    print('Finishing up!')
+    GPIO.output(32, False)
+    GPIO.output(33, False)
+    
+    return None
+
+
+def motor2test():
+
+    # Makes the motor spin one way for 3 seconds
+    print("test forward")
+    GPIO.output(28, True)
+    GPIO.output(29, False)
+    time.sleep(3)
+    # Spins the other way for a further 3 seconds
+    print("test backward")
+    GPIO.output(28, False)
+    GPIO.output(29, True)
+    time.sleep(3)
+
+    print('Finishing up!')
+    GPIO.output(28, False)
+    GPIO.output(29, False)
+    
+    return None
