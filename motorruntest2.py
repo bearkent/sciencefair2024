@@ -14,6 +14,10 @@ def setuppins():
     GPIO.setup(13,GPIO.OUT)
     GPIO.setup(1,GPIO.OUT)
     GPIO.setup(5,GPIO.OUT)
+    GPIO.setup(17,GPIO.OUT)
+    GPIO.setup(18,GPIO.OUT)
+    GPIO.setup(22,GPIO.OUT)
+    GPIO.setup(23,GPIO.OUT)
 
 
 def motor1test():
@@ -55,6 +59,49 @@ def motor2test():
     
     return None
 
+def motor3test():
+
+    # Makes the motor spin one way for 3 seconds
+    print("test forward")
+    GPIO.output(17, True)
+    GPIO.output(18, False)
+    time.sleep(3)
+    # Spins the other way for a further 3 seconds
+    print("test backward")
+    GPIO.output(17, False)
+    GPIO.output(18, True)
+    time.sleep(3)
+
+    print('Finishing up!')
+    GPIO.output(17, False)
+    GPIO.output(18, False)
+    
+    return None
+
+def motor4test():
+
+    # Makes the motor spin one way for 3 seconds
+    print("test forward")
+    GPIO.output(22, True)
+    GPIO.output(23, False)
+    time.sleep(3)
+    # Spins the other way for a further 3 seconds
+    print("test backward")
+    GPIO.output(22, False)
+    GPIO.output(23, True)
+    time.sleep(3)
+
+    print('Finishing up!')
+    GPIO.output(22, False)
+    GPIO.output(23, False)
+    
+    return None
+
+#motor 3 pins = 17,18
+#motor 4 pins = 22,23
+
 setuppins()
 motor1test()
 motor2test()
+motor3test()
+motor4test()
