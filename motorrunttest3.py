@@ -1,4 +1,4 @@
-from motor import Motor
+from motorclass import Motor
 
 pinlist = [12, 13, 1, 5, 17, 18, 22, 23]
 
