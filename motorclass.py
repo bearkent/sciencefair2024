@@ -5,14 +5,16 @@ class Motor:
 
     def __init__(self, pinlist:list) -> None:
 
-        self.pinlist[0] = m1pin1
-        self.pinlist[1] = m1pin2
-        self.pinlist[2] = m2pin1
-        self.pinlist[3] = m2pin2
-        self.pinlist[4] = m3pin1
-        self.pinlist[5] = m3pin2
-        self.pinlist[6] = m4pin1
-        self.pinlist[7] = m4pin2
+        self.pinlist = pinlist
+
+        pinlist[0] = m1pin1  #motor1 pin1
+        pinlist[1] = m1pin2
+        pinlist[2] = m2pin1
+        pinlist[3] = m2pin2
+        pinlist[4] = m3pin1
+        pinlist[5] = m3pin2
+        pinlist[6] = m4pin1
+        pinlist[7] = m4pin2
 
         
 
