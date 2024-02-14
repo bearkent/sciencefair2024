@@ -18,6 +18,8 @@ def setuppins():
 
 def motor1test():
 
+    setuppins()
+
     # Makes the motor spin one way for 3 seconds
     print("test forward")
     GPIO.output(32, True)
@@ -38,6 +40,8 @@ def motor1test():
 
 def motor2test():
 
+    setuppins()
+
     # Makes the motor spin one way for 3 seconds
     print("test forward")
     GPIO.output(28, True)
@@ -55,6 +59,6 @@ def motor2test():
     
     return None
 
-setuppins()
+
 motor1test()
 motor2test()
