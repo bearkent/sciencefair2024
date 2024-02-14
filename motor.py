@@ -1,133 +1,165 @@
-from machine import Pin
-from machine import PWM
-import utime
+import time
+import RPi.GPIO as GPIO
 
-'''
-Class to represent our motor
-'''
 class Motor:
-    MAX_DUTY_CYCLE = 65535
-    MIN_DUTY_CYCLE = 0
-    def __init__(self, motor_pins, frequency=20000):
-        self.motor1_pin1 = PWM(Pin(motor_pins[0], mode=Pin.OUT))
-        self.motor1_pin2 = PWM(Pin(motor_pins[1], mode=Pin.OUT))
-        self.motor2_pin1 = PWM(Pin(motor_pins[2], mode=Pin.OUT))
-        self.motor2_pin2 = PWM(Pin(motor_pins[3], mode=Pin.OUT))
-        self.motor3_pin1 = PWM(Pin(motor_pins[4], mode=Pin.OUT))
-        self.motor3_pin2 = PWM(Pin(motor_pins[5], mode=Pin.OUT))
-        self.motor4_pin1 = PWM(Pin(motor_pins[6], mode=Pin.OUT))
-        self.motor4_pin2 = PWM(Pin(motor_pins[7], mode=Pin.OUT))
 
-        # set PWM frequency
+    def __init__(self, pinlist:list) -> None:
 
-        self.motor1_pin1.freq(frequency)
-        self.motor1_pin2.freq(frequency)
-        self.motor2_pin1.freq(frequency)
-        self.motor2_pin2.freq(frequency)
-        self.motor3_pin1.freq(frequency)
-        self.motor3_pin2.freq(frequency)
-        self.motor4_pin1.freq(frequency)
-        self.motor4_pin2.freq(frequency)
+        self.pinlist[0] = m1pin1
+        self.pinlist[1] = m1pin2
+        self.pinlist[2] = m2pin1
+        self.pinlist[3] = m2pin2
+        self.pinlist[4] = m3pin1
+        self.pinlist[5] = m3pin2
+        self.pinlist[6] = m4pin1
+        self.pinlist[7] = m4pin2
 
         
-        self.current_speed = Motor.MAX_DUTY_CYCLE
 
-    def motor1_f(self):
-        self.motor1_pin1.duty_u16(self.current_speed)
-        self.motor1_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
+    def setuppins(self):
+    # Next we setup the pins for use!
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setwarnings(False)
+        GPIO.setup(m1pin1,GPIO.OUT)
+        GPIO.setup(m1pin2,GPIO.OUT)
+        GPIO.setup(m2pin1,GPIO.OUT)
+        GPIO.setup(m2pin2,GPIO.OUT)
+        GPIO.setup(m3pin1,GPIO.OUT)
+        GPIO.setup(m3pin2,GPIO.OUT)
+        GPIO.setup(m4pin1,GPIO.OUT)
+        GPIO.setup(m4pin2,GPIO.OUT)
 
-    def motor1_b(self):
-        self.motor1_pin1.duty_u16(Motor.MIN_DUTY_CYCLE)
-        self.motor1_pin2.duty_u16(self.current_speed)
+    def motor1(self, k:bool, t:int):
+        if k:
+            print(f"motor 1 forward for {t} milliseconds")
+            GPIO.output(m1pin1, True)
+            GPIO.output(m1pin2, False)
+            time.sleep(t/1000)
+        else:
+            print(f"motor 1 backward for {t} milliseconds")
+            GPIO.output(m1pin1, False)
+            GPIO.output(m1pin2, True)
+            time.sleep(t/1000)
+
+    def motor2(self, k:bool, t:int):
+        if k:
+            print(f"motor 2 forward for {t} milliseconds")
+            GPIO.output(m2pin1, True)
+            GPIO.output(m2pin2, False)
+            time.sleep(t/1000)
+        else:
+            print(f"motor 2 backward for {t} milliseconds")
+            GPIO.output(m2pin1, False)
+            GPIO.output(m2pin2, True)
+            time.sleep(t/1000)
+
+    def motor3(self, k:bool, t:int):
+        if k:
+            print(f"motor 3 forward for {t} milliseconds")
+            GPIO.output(m3pin1, True)
+            GPIO.output(m3pin2, False)
+            time.sleep(t/1000)
+        else:
+            print(f"motor 3 backward for {t} milliseconds")
+            GPIO.output(m3pin1, False)
+            GPIO.output(m3pin2, True)
+            time.sleep(t/1000)
+
+    def motor4(self, k:bool, t:int):
+        if k:
+            print(f"motor 4 forward for {t} milliseconds")
+            GPIO.output(m4pin1, True)
+            GPIO.output(m4pin2, False)
+            time.sleep(t/1000)
+        else:
+            print(f"motor 4 backward for {t} milliseconds")
+            GPIO.output(m4pin1, False)
+            GPIO.output(m4pin2, True)
+            time.sleep(t/1000)
 
 
-    def motor2_f(self):
-        self.motor2_pin1.duty_u16(self.current_speed)
-        self.motor2_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
+# def motor1test():
 
-    def motor2_b(self):
-        self.motor2_pin1.duty_u16(Motor.MIN_DUTY_CYCLE)
-        self.motor2_pin2.duty_u16(self.current_speed)
+#     # Makes the motor spin one way for 3 seconds
+#     print("test forward")
+#     GPIO.output(12, True)
+#     GPIO.output(13, False)
+#     time.sleep(3)
+#     # Spins the other way for a further 3 seconds
+#     print("test backward")
+#     GPIO.output(12, False)
+#     GPIO.output(13, True)
+#     time.sleep(3)
 
-
-    def motor3_f(self):
-        self.motor3_pin1.duty_u16(self.current_speed)
-        self.motor3_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
-
-    def motor3_b(self):
-        self.motor3_pin1.duty_u16(Motor.MIN_DUTY_CYCLE)
-        self.motor3_pin2.duty_u16(self.current_speed)
-
+#     print('Finishing up!')
+#     GPIO.output(12, False)
+#     GPIO.output(13, False)
     
-    def motor4_f(self):
-        self.motor4_pin1.duty_u16(self.current_speed)
-        self.motor3_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
+#     return None
 
-    def motor4_b(self):
-        self.motor3_pin1.duty_u16(Motor.MIN_DUTY_CYCLE)
-        self.motor3_pin2.duty_u16(self.current_speed)
-        
-    # def move_forward(self):
-    #     self.motor1_pin1.duty_u16(self.current_speed)
-    #     self.motor1_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
-        
-    #     self.motor2_pin1.duty_u16(self.current_speed)
-    #     self.motor2_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
-           
-    # def move_backward(self):
-    #     self.motor1_pin1.duty_u16(Motor.MIN_DUTY_CYCLE)
-    #     self.motor1_pin2.duty_u16(self.current_speed)
-        
-    #     self.motor2_pin1.duty_u16(Motor.MIN_DUTY_CYCLE)
-    #     self.motor2_pin2.duty_u16(self.current_speed)
-        
-    # def turn_left(self):
-    #     self.motor1_pin1.duty_u16(self.current_speed)
-    #     self.motor1_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
-        
-    #     self.motor2_pin1.duty_u16(Motor.MAX_DUTY_CYCLE)
-    #     self.motor2_pin2.duty_u16(Motor.MAX_DUTY_CYCLE)
-        
-    # def turn_right(self):
-    #     self.motor1_pin1.duty_u16(Motor.MAX_DUTY_CYCLE)
-    #     self.motor1_pin2.duty_u16(Motor.MAX_DUTY_CYCLE)
-        
-    #     self.motor2_pin1.duty_u16(self.current_speed)
-    #     self.motor2_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
-        
-    def stop(self):
-        self.motor1_pin1.duty_u16(Motor.MIN_DUTY_CYCLE)
-        self.motor1_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
-        
-        self.motor2_pin1.duty_u16(Motor.MIN_DUTY_CYCLE)
-        self.motor2_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
 
-        self.motor3_pin1.duty_u16(Motor.MIN_DUTY_CYCLE)
-        self.motor3_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
+# def motor2test():
 
-        self.motor4_pin1.duty_u16(Motor.MIN_DUTY_CYCLE)
-        self.motor4_pin2.duty_u16(Motor.MIN_DUTY_CYCLE)
-        
-    ''' Map duty cycle values from 0-100 to duty cycle 40000-65535 '''
-    def __map_range(self, x, in_min, in_max, out_min, out_max):
-      return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
-        
-    ''' new_speed is a value from 0% - 100% '''
-    def change_speed(self, new_speed):
-        new_duty_cycle = self.__map_range(new_speed, 0, 100, 40000, 65535)
-        self.current_speed = new_duty_cycle
+#     # Makes the motor spin one way for 3 seconds
+#     print("test forward")
+#     GPIO.output(1, True)
+#     GPIO.output(5, False)
+#     time.sleep(3)
+#     # Spins the other way for a further 3 seconds
+#     print("test backward")
+#     GPIO.output(1, False)
+#     GPIO.output(5, True)
+#     time.sleep(3)
 
-        
-    def deinit(self):
-        """deinit PWM Pins"""
-        print("Deinitializing PWM Pins")
-        self.stop()
-        utime.sleep(0.1)
-        self.motor1_pin1.deinit()
-        self.motor1_pin2.deinit()
-        self.motor2_pin1.deinit()
-        self.motor2_pin2.deinit()
-        self.motor3_pin1.deinit()
-        self.motor3_pin2.deinit()
-        self.motor4_pin1.deinit()
-        self.motor4_pin2.deinit()
+#     print('Finishing up!')
+#     GPIO.output(1, False)
+#     GPIO.output(5, False)
+    
+#     return None
+
+# def motor3test():
+
+#     # Makes the motor spin one way for 3 seconds
+#     print("test forward")
+#     GPIO.output(17, True)
+#     GPIO.output(18, False)
+#     time.sleep(3)
+#     # Spins the other way for a further 3 seconds
+#     print("test backward")
+#     GPIO.output(17, False)
+#     GPIO.output(18, True)
+#     time.sleep(3)
+
+#     print('Finishing up!')
+#     GPIO.output(17, False)
+#     GPIO.output(18, False)
+    
+#     return None
+
+# def motor4test():
+
+#     # Makes the motor spin one way for 3 seconds
+#     print("test forward")
+#     GPIO.output(22, True)
+#     GPIO.output(23, False)
+#     time.sleep(3)
+#     # Spins the other way for a further 3 seconds
+#     print("test backward")
+#     GPIO.output(22, False)
+#     GPIO.output(23, True)
+#     time.sleep(3)
+
+#     print('Finishing up!')
+#     GPIO.output(22, False)
+#     GPIO.output(23, False)
+    
+#     return None
+
+# #motor 3 pins = 17,18
+# #motor 4 pins = 22,23
+
+# setuppins()
+# motor1test()
+# motor2test()
+# motor3test()
+# motor4test()

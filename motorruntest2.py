@@ -1,7 +1,6 @@
 # A program to control the movement of a single motor using the RTK MCB!
 # Composed by The Raspberry Pi Guy to accompany his tutorial!
 
-# Let's import the modules we will need!
 import time
 import RPi.GPIO as GPIO
 
