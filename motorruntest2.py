@@ -54,3 +54,7 @@ def motor2test():
     GPIO.output(29, False)
     
     return None
+
+setuppins()
+motor1test()
+motor2test()
