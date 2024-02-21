@@ -50,7 +50,8 @@ class Sound:
         return len(self.ys)    
 
     def plot(self) -> None:
-        plt.plot(self.xs, self.ys)  
+        plt.plot(self.xs, self.ys)
+        plt.show()  
         
     def play(self) -> None:
         print("playing audio\n")
