@@ -94,9 +94,9 @@ class FFT:
     #             self.i+=1
     #         else: self.i+=1
             
-        print(self.indecies)
+        # print(self.indecies)
             
-        return self.indecies
+        # return self.indecies
     
     def __len__(self) -> int:
         return len(self.ys) 
