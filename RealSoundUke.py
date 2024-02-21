@@ -88,15 +88,15 @@ class FFT:
         self.i=0
         
         for self.y in self.ys:
-            if self.y>=3:
-                self.indecies.append(self.y)
+            if self.y>=0.7:
+                self.indecies.append(self.i)
                 print(f"index: {self.i}")
                 self.i+=1
             else: self.i+=1
             
-        print(self.indecies/2)
+        print(self.indecies)
             
-        return self.indecies/2
+        return self.indecies
     
     def __len__(self) -> int:
         return len(self.ys) 
