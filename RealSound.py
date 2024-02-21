@@ -93,6 +93,7 @@ class FFT:
     
     def plot(self) -> None:
         plt.plot(self.xs, self.ys)
+        plt.show()
 
     def multiply(self, f: Callable[[float],float]) -> 'FFT':
         newys = np.copy(self.ys)
