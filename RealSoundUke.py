@@ -88,16 +88,16 @@ class FFT:
         self.i=0
         
         for self.y in self.ys:
-            if self.y>=3:
-                self.indecies.append(self.i/2)
-                print(f"index: {self.i/2}")
+            if self.y>=2:
+                self.indecies.append(self.xs[self.i])
+                print(f"freq: {self.xs[self.i]}")
                 self.i+=1
             else: self.i+=1
             
-        for self.val in self.indecies:
-            if 250<=self.val<=500==False:
-                self.indecies.remove(self.val)
-            else: return
+        # for self.val in self.indecies:
+        #     if 250<=self.val<=500==False:
+        #         self.indecies.remove(self.val)
+        #     else: return
             
         print(self.indecies)
             
