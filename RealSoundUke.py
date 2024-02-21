@@ -45,8 +45,6 @@ class Sound:
 
             self.xs = self.xs[:-1]
             self.ys = self.ys[:-1]
-            
-    def getukefreqs(self):
         
 
     def __len__(self) -> int:
@@ -84,6 +82,21 @@ class FFT:
         #TODO: arange??
         self.xs = np.linspace(0, samples/2, samples) * (samplingfreq/samples)
         # self.xs = np.arange(0, samples/2) * (samplingfreq/samples)
+        
+    def getukefreqs(self):
+        self.indecies = []
+        self.i=0
+        
+        for self.y in self.ys:
+            if self.y>=3:
+                self.indecies.append(self.y)
+                print(f"index: {self.i}")
+                self.i+=1
+            else: self.i+=1
+            
+        print(self.indecies)
+            
+        return self.indecies
     
     def __len__(self) -> int:
         return len(self.ys) 
