@@ -1,6 +1,6 @@
 import RealSoundUke as rs
 
-rec = rs.record(3, 1000)
+rec = rs.record(3, 2000)
 
 rec.plot()
 
