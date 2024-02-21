@@ -83,16 +83,16 @@ class FFT:
         self.xs = np.linspace(0, samples/2, samples) * (samplingfreq/samples)
         # self.xs = np.arange(0, samples/2) * (samplingfreq/samples)
         
-    def getukefreqs(self):
-        self.indecies = []
-        self.i=0
+    # def getukefreqs(self):
+    #     self.indecies = []
+    #     self.i=0
         
-        for self.y in self.ys:
-            if self.y>=0.001:
-                self.indecies.append(self.xs[self.i])
-                print(f"freq: {self.xs[self.i]}")
-                self.i+=1
-            else: self.i+=1
+    #     for self.y in self.ys:
+    #         if self.y>=0.001:
+    #             self.indecies.append(self.xs[self.i])
+    #             print(f"freq: {self.xs[self.i]}")
+    #             self.i+=1
+    #         else: self.i+=1
             
         print(self.indecies)
             
@@ -141,7 +141,7 @@ class PowerSpectrum:
         self.i=0
         
         for self.y in self.ys:
-            if self.y>=2:
+            if self.y>=0.0005:
                 self.indecies.append(self.xs[self.i])
                 print(f"freq: {self.xs[self.i]}")
                 self.i+=1
