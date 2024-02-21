@@ -89,7 +89,7 @@ class FFT:
         
         for self.y in self.ys:
             if self.y>=0.7:
-                self.indecies.append(self.i)
+                self.indecies.append(self.i/2)
                 print(f"index: {self.i}")
                 self.i+=1
             else: self.i+=1
