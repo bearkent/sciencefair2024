@@ -97,6 +97,7 @@ class FFT:
         for self.val in self.indecies:
             if 250<=self.val<=500==False:
                 self.indecies.remove(self.val)
+            else: return
             
         print(self.indecies)
             
