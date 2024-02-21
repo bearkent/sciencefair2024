@@ -83,21 +83,16 @@ class FFT:
         self.xs = np.linspace(0, samples/2, samples) * (samplingfreq/samples)
         # self.xs = np.arange(0, samples/2) * (samplingfreq/samples)
         
-    # def getukefreqs(self):
-    #     self.indecies = []
-    #     self.i=0
+    def getukefreqs(self):
+        self.indecies = []
+        self.i=0
         
-    #     for self.y in self.ys:
-    #         if self.y>=3:
-    #             self.indecies.append(self.xs[self.i])
-    #             print(f"freq: {self.xs[self.i]}")
-    #             self.i+=1
-    #         else: self.i+=1
-            
-        # for self.val in self.indecies:
-        #     if 250<=self.val<=500==False:
-        #         self.indecies.remove(self.val)
-        #     else: return
+        for self.y in self.ys:
+            if self.y>=3:
+                self.indecies.append(self.xs[self.i])
+                print(f"freq: {self.xs[self.i]}")
+                self.i+=1
+            else: self.i+=1
             
         print(self.indecies)
             
