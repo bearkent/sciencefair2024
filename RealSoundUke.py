@@ -88,7 +88,7 @@ class FFT:
         self.i=0
         
         for self.y in self.ys:
-            if self.y>=1:
+            if self.y>=5:
                 self.indecies.append(self.xs[self.i])
                 print(f"freq: {self.xs[self.i]}")
                 self.i+=1
