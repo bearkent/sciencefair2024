@@ -7,7 +7,29 @@ ps = rs.PowerSpectrum(fft)
 
 xs = ps.getukefreqs()
 
-dict = {}
+string1=[]
+string2=[]
+string3=[]
+string4=[]
+
+for val in xs:
+    if 420<val<460:
+        string1.append(val)
+    elif 310<val<350:
+        string2.append(val)
+    elif 240<val<280:
+        string3.append(val)
+    elif 370<val<410:
+        string4.append(val)
+        
+print(string1)
+print(string2)
+print(string3)
+print(string4)
+
+ps.plot()
+
+# dict = {}
 
 # for x in xs:
 #     if x  dict.keys()
@@ -16,5 +38,5 @@ dict = {}
 #                 dict[x]=freq
 
 
-ps.plot()
+
 
