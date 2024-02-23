@@ -146,6 +146,8 @@ class PowerSpectrum:
                 print(f"freq: {self.xs[self.i]}")
                 self.i+=1
             else: self.i+=1
+            
+        return self.indecies
 
     #TODO: what should this be doing?
     def max(self):
