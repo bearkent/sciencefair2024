@@ -31,7 +31,7 @@ print(string4)
 string1freq=mean(string1)
 string2freq=mean(string2)
 string3freq=mean(string3)
-string4freq=mean(string3)
+string4freq=mean(string4)
 
 print(string1freq)
 print(string2freq)
