@@ -1,4 +1,5 @@
 import RealSoundUke as rs
+from statistics import mean
 
 rec = rs.record(3, 1000)
 
@@ -26,6 +27,16 @@ print(string1)
 print(string2)
 print(string3)
 print(string4)
+
+string1freq=mean(string1)
+string2freq=mean(string2)
+string3freq=mean(string3)
+string4freq=mean(string3)
+
+print(string1freq)
+print(string2freq)
+print(string3freq)
+print(string4freq)
 
 ps.plot()
 
