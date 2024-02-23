@@ -10,6 +10,7 @@ import asyncio
 from scipy.interpolate import CubicSpline
 # from fix import fix
 from scipy.io.wavfile import read, write
+from statistics import mean
 # from os.path import dirname, join as pjoin
 # from scipy.io.wavfile import write
 
@@ -147,7 +148,37 @@ class PowerSpectrum:
                 self.i+=1
             else: self.i+=1
             
-        return self.indecies
+        self.string1=[]
+        self.string2=[]
+        self.string3=[]
+        self.string4=[]
+
+        for self.val in self.indecies:
+            if 420<self.val<460:
+                self.string1.append(self.val)
+            elif 310<self.val<350:
+                self.string2.append(self.val)
+            elif 240<self.val<280:
+                self.string3.append(self.val)
+            elif 370<self.val<410:
+                self.string4.append(self.val)
+        
+        print(self.string1)
+        print(self.string2)
+        print(self.string3)
+        print(self.string4)
+
+        self.string1freq=mean(self.string1)
+        self.string2freq=mean(self.string2)
+        self.string3freq=mean(self.string3)
+        self.string4freq=mean(self.string4)
+
+        print(self.string1freq)
+        print(self.string2freq)
+        print(self.string3freq)
+        print(self.string4freq)
+        
+        return [self.string1freq, self.string2freq, self.string3freq, self.string4freq]
 
     #TODO: what should this be doing?
     def max(self):
