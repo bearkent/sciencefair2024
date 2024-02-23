@@ -142,7 +142,7 @@ class PowerSpectrum:
         self.i=0
         
         for self.y in self.ys:
-            if self.y>=0.00003:
+            if self.y>=0.0001:
                 self.indecies.append(self.xs[self.i])
                 print(f"freq: {self.xs[self.i]}")
                 self.i+=1
