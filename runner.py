@@ -8,7 +8,7 @@ m = Motor(pinlist)
 
 def turntime(l):
     dif1 = 440-l[0]
-    dif2 = 330-l[1]
+    dif2 = 330-l[1] #fix the add it was giving type error
     dif3 = 262-l[2]
     dif4 = 392-l[3]
     
