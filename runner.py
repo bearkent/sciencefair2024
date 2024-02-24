@@ -52,3 +52,8 @@ print([times1,times2,times3,times4])
 
 print(freqs)
 
+
+m.motor1(times1[0],times1[1])
+m.motor2(times2[0],times2[1])
+m.motor3(times3[0],times3[1])
+m.motor4(times4[0],times4[1])
