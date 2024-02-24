@@ -6,6 +6,8 @@ pinlist = [12, 13, 1, 5, 17, 18, 22, 23]
 
 m = Motor(pinlist)
 
+m.setuppins()
+
 def turntime(l):
     dif1 = 440-int(l[0])
     dif2 = 330-int(l[1]) #fix the add it was giving type error
