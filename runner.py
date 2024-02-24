@@ -1,6 +1,10 @@
 import RealSoundUke as rs
 from statistics import mean
-from motorclass import Motor as m
+from motorclass import Motor 
+
+pinlist = [12, 13, 1, 5, 17, 18, 22, 23]
+
+m = Motor(pinlist)
 
 def turntime(l):
     dif1 = 440-l[0]
