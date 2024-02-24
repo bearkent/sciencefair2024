@@ -31,7 +31,7 @@ class Motor:
         GPIO.setup(self.pinlist[6],GPIO.OUT)
         GPIO.setup(self.pinlist[7],GPIO.OUT)
 
-    def motor1(self, k:bool, t:int):
+    def motor4(self, k:bool, t:int):
         if k:
             print(f"motor 1 forward for {t} milliseconds")
             GPIO.output(self.pinlist[0], True)
@@ -46,7 +46,7 @@ class Motor:
         GPIO.output(self.pinlist[0], False)
         GPIO.output(self.pinlist[1], False)
 
-    def motor2(self, k:bool, t:int):
+    def motor3(self, k:bool, t:int):
         if k:
             print(f"motor 2 forward for {t} milliseconds")
             GPIO.output(self.pinlist[2], True)
@@ -61,7 +61,7 @@ class Motor:
         GPIO.output(self.pinlist[2], False)
         GPIO.output(self.pinlist[3], False)
 
-    def motor3(self, k:bool, t:int):
+    def motor2(self, k:bool, t:int):
         if k:
             print(f"motor 3 forward for {t} milliseconds")
             GPIO.output(self.pinlist[4], True)
@@ -76,7 +76,7 @@ class Motor:
         GPIO.output(self.pinlist[4], False)
         GPIO.output(self.pinlist[5], False)
 
-    def motor4(self, k:bool, t:int):
+    def motor1(self, k:bool, t:int):
         if k:
             print(f"motor 4 forward for {t} milliseconds")
             GPIO.output(self.pinlist[6], True)
