@@ -27,30 +27,30 @@ ps = rs.PowerSpectrum(fft)
 
 freqs = ps.getukefreqs()
 
-times = turntime(freqs)
-# print(times)
+# times = turntime(freqs)
+# # print(times)
 
-times1 = [True, times[0]]
-if times1[1]<0:
-    times1[0]=False
-    times1[1]=-times1[1]
+# times1 = [True, times[0]]
+# if times1[1]<0:
+#     times1[0]=False
+#     times1[1]=-times1[1]
     
-times2 = [True, times[1]]
-if times2[1]<0:
-    times2[0]=False
-    times2[1]=-times1[1]
+# times2 = [True, times[1]]
+# if times2[1]<0:
+#     times2[0]=False
+#     times2[1]=-times1[1]
     
-times3 = [True, times[2]]
-if times3[1]<0:
-    times3[0]=False
-    times3[1]=-times1[1]
+# times3 = [True, times[2]]
+# if times3[1]<0:
+#     times3[0]=False
+#     times3[1]=-times1[1]
     
-times4 = [True, times[3]]
-if times4[1]<0:
-    times4[0]=False
-    times4[1]=-times1[1]
+# times4 = [True, times[3]]
+# if times4[1]<0:
+#     times4[0]=False
+#     times4[1]=-times1[1]
     
-print([times1,times2,times3,times4])
+# print([times1,times2,times3,times4])
 
 
 
