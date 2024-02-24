@@ -33,12 +33,12 @@ class Motor:
 
     def motor4(self, k:bool, t:int):
         if k:
-            print(f"motor 1 forward for {t} milliseconds")
+            print(f"motor 4 forward for {t} milliseconds")
             GPIO.output(self.pinlist[0], True)
             GPIO.output(self.pinlist[1], False)
             time.sleep(t/1000)
         else:
-            print(f"motor 1 backward for {t} milliseconds")
+            print(f"motor 4 backward for {t} milliseconds")
             GPIO.output(self.pinlist[0], False)
             GPIO.output(self.pinlist[1], True)
             time.sleep(t/1000)
@@ -48,12 +48,12 @@ class Motor:
 
     def motor3(self, k:bool, t:int):
         if k:
-            print(f"motor 2 forward for {t} milliseconds")
+            print(f"motor 3 forward for {t} milliseconds")
             GPIO.output(self.pinlist[2], True)
             GPIO.output(self.pinlist[3], False)
             time.sleep(t/1000)
         else:
-            print(f"motor 2 backward for {t} milliseconds")
+            print(f"motor 3 backward for {t} milliseconds")
             GPIO.output(self.pinlist[2], False)
             GPIO.output(self.pinlist[3], True)
             time.sleep(t/1000)
@@ -63,12 +63,12 @@ class Motor:
 
     def motor2(self, k:bool, t:int):
         if k:
-            print(f"motor 3 forward for {t} milliseconds")
+            print(f"motor 2 forward for {t} milliseconds")
             GPIO.output(self.pinlist[4], True)
             GPIO.output(self.pinlist[5], False)
             time.sleep(t/1000)
         else:
-            print(f"motor 3 backward for {t} milliseconds")
+            print(f"motor 2 backward for {t} milliseconds")
             GPIO.output(self.pinlist[4], False)
             GPIO.output(self.pinlist[5], True)
             time.sleep(t/1000)
@@ -78,12 +78,12 @@ class Motor:
 
     def motor1(self, k:bool, t:int):
         if k:
-            print(f"motor 4 forward for {t} milliseconds")
+            print(f"motor 1 forward for {t} milliseconds")
             GPIO.output(self.pinlist[6], True)
             GPIO.output(self.pinlist[7], False)
             time.sleep(t/1000)
         else:
-            print(f"motor 4 backward for {t} milliseconds")
+            print(f"motor 1 backward for {t} milliseconds")
             GPIO.output(self.pinlist[6], False)
             GPIO.output(self.pinlist[7], True)
             time.sleep(t/1000)
