@@ -52,7 +52,7 @@ print([times1,times2,times3,times4])
 
 print(freqs)
 
-
+m.setuppins()
 m.motor1(True,100)
 m.motor2(True,100)
 m.motor3(True,100)
