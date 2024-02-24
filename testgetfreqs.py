@@ -6,6 +6,8 @@ rec = rs.record(3, 1000)
 fft = rec.fft()
 ps = rs.PowerSpectrum(fft)
 
+ps.plot()
+
 freqs = ps.getukefreqs()
 
 print(freqs)
@@ -40,7 +42,7 @@ print(freqs)
 # print(string3freq)
 # print(string4freq)
 
-ps.plot()
+
 
 # dict = {}
 
