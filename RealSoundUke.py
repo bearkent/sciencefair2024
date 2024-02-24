@@ -168,10 +168,29 @@ class PowerSpectrum:
         print(self.string3)
         print(self.string4)
 
-        if len(self.string1freq!=1): self.string1freq=mean(self.string1)
-        if len(self.string2freq!=1): self.string2freq=mean(self.string2)
-        if len(self.string3freq!=1): self.string3freq=mean(self.string3)
-        if len(self.string4freq!=1): self.string4freq=mean(self.string4)
+        if len(self.string1!=1): 
+            self.string1freq=mean(self.string1)
+        else:
+            self.string1freq=self.string1
+            
+        if len(self.string2!=1): 
+            self.string2freq=mean(self.string2)
+        else:
+            self.string2freq=self.string2
+            
+        if len(self.string3!=1): 
+            self.string3freq=mean(self.string3)
+        else:
+            self.string3freq=self.string3
+            
+        if len(self.string4!=1): 
+            self.string4freq=mean(self.string4)
+        else:
+            self.string4freq=self.string4
+        
+        # self.string1freq=mean(self.string1)
+        # self.string2freq=mean(self.string2)
+        # self.string3freq=mean(self.string3)
 
         print(self.string1freq)
         print(self.string2freq)
