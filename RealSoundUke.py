@@ -170,21 +170,25 @@ class PowerSpectrum:
 
         if len(self.string1)!=1: 
             self.string1freq=mean(self.string1)
+        elif len(self.string1)==0:self.string1freq=440
         else:
             self.string1freq=self.string1
             
         if len(self.string2)!=1: 
             self.string2freq=mean(self.string2)
+        elif len(self.string2)==0:self.string2freq=330
         else:
             self.string2freq=self.string2
             
         if len(self.string3)!=1: 
             self.string3freq=mean(self.string3)
+        elif len(self.string3)==0:self.string3freq=262
         else:
             self.string3freq=self.string3
             
         if len(self.string4)!=1: 
             self.string4freq=mean(self.string4)
+        elif len(self.string4)==0:self.string4freq=392
         else:
             self.string4freq=self.string4
         

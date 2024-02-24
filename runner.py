@@ -29,6 +29,7 @@ ps = rs.PowerSpectrum(fft)
 
 freqs = ps.getukefreqs()
 
+
 times = turntime(freqs)
 print(times)
 
